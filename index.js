@@ -1,11 +1,14 @@
 function App() {
     const [operation, setOperation] = React.useState("");
-    const [ans, setAns] = React.useState("");
     const [display, setDisplay] = React.useState("");
 
     const clickHandler = (input) => {
-        setDisplay(display + input);
-        setOperation(input);
+
+        if (display == "0" && input == "0") { }
+        else {
+            setDisplay(display + input);
+            setOperation(input);
+        }
     }
 
     function clean() {
@@ -20,10 +23,14 @@ function App() {
                 replace.push(elem.slice(-1)); //last character of each matched group
             }
             const splat = display.split(regex); //splits into parts where matched groups are, returns array
-            for (let r = 0; r < splat.length-1; r++) {
+            for (let r = 0; r < splat.length - 1; r++) {
                 splat[r] = splat[r].concat(replace[r]); //
             }
-            setDisplay(splat.join("")); //return expression without the consequtive inputs
+            
+            setDisplay(eval(splat.join(""))); //return calculated expression without the consequtive inputs
+        }
+        else{
+            setDisplay(eval(display));
         }
     }
 
@@ -40,7 +47,7 @@ function App() {
     return (
         <div id="myCalc" className="displayAll">
             <div id="grid">
-                <input value={display} id="theDisplay" disabled></input>
+                <input id="theDisplay" value={display} disabled></input>
                 <input id="display" value={operation} disabled></input>
                 <div id="seven" className="btn p-3" onClick={() => clickHandler("7")}>7</div>
                 <div id="eight" className="btn p-3 " onClick={() => clickHandler("8")}>8</div>
