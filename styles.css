@@ -1,0 +1,11 @@
+#grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+    "display display display display display"
+    "seven eight nine clear"
+    "four five six add multiply"
+    "one two three subtract divide"
+    "zero decimal equals"
+}
