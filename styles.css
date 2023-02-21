@@ -1,11 +1,39 @@
+#display{
+    grid-area: display;
+}
+#clear{
+    grid-area: clear;
+    text-align: center;
+}
+#zero{
+    grid-area: zero;
+    text-align: center;
+}
+#equals{
+    grid-area: equals;
+    text-align: center;
+}
+#theDisplay{
+grid-area: theDisplay;
+text-align: center;
+}
+
 #grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-areas:
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "theDisplay theDisplay theDisplay theDisplay theDisplay"
     "display display display display display"
-    "seven eight nine clear"
+    "seven eight nine clear clear"
     "four five six add multiply"
     "one two three subtract divide"
-    "zero decimal equals"
+    "zero zero decimal equals equals";
+}
+
+.displayAll{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
