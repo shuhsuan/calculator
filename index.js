@@ -20,16 +20,22 @@ function App() {
             const groups = display.match(regex) //array of group matches
             const replace = [];
             for (const elem of groups) {
-                replace.push(elem.slice(-1)); //last character of each matched group
+                if (elem.charAt(elem.length - 1) == "-") {
+                    replace.push(elem.slice(-2)) //if last char of group is a -, treat it as a negative
+                    console.log(replace);
+                    continue;
+                }
+                    replace.push(elem.slice(-1)); //last character of each matched group
+                
             }
             const splat = display.split(regex); //splits into parts where matched groups are, returns array
             for (let r = 0; r < splat.length - 1; r++) {
                 splat[r] = splat[r].concat(replace[r]); //
             }
-            
+
             setDisplay(eval(splat.join(""))); //return calculated expression without the consequtive inputs
         }
-        else{
+        else {
             setDisplay(eval(display));
         }
     }
