@@ -1,5 +1,15 @@
+:root{
+    --topColor: #c2c1c1;
+    --sideColor: rgb(152, 151, 151);
+    --bottomShade: rgb(93, 93, 93);
+
+    
+}
+
 #display{
     grid-area: display;
+    text-align: center;
+    font-family: 'Arvo', serif;
 }
 #clear{
     grid-area: clear;
@@ -16,6 +26,7 @@
 #theDisplay{
 grid-area: theDisplay;
 text-align: center;
+font-family: 'Arvo', serif;
 }
 
 #grid{
@@ -32,8 +43,19 @@ text-align: center;
 }
 
 .displayAll{
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: rotateX(10deg) rotateY(20deg) rotateX(-30deg) rotateZ(10deg) scale(1.8);
+}
+
+.buttonPad{
+    background-color: var(--topColor);
+    border: var(--topColor);
+    transform: translateY(10deg);
+}
+
+.buttonPad:hover{
+    background-color: var(--topColor);
 }

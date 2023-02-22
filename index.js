@@ -4,7 +4,11 @@ function App() {
 
     const clickHandler = (input) => {
 
-        if (display == "0" && input == "0") { }
+        const numDot = /\d\.$/g;
+        const numOp = /\d[\+\-\*\/]?[\+\-\*\/]+ $/g;
+
+        if (display == "0" && input == "0"){ }
+        else if(numDot.test(display) && input=="." || numOp.test(display) && input=="."){}
         else {
             setDisplay(display + input);
             setOperation(input);
@@ -55,23 +59,23 @@ function App() {
             <div id="grid">
                 <input id="theDisplay" value={display} disabled></input>
                 <input id="display" value={operation} disabled></input>
-                <div id="seven" className="btn p-3" onClick={() => clickHandler("7")}>7</div>
-                <div id="eight" className="btn p-3 " onClick={() => clickHandler("8")}>8</div>
-                <div id="nine" className="btn p-3 " onClick={() => clickHandler("9")}>9</div>
-                <div id="clear" className="btn p-3 " onClick={() => clear()}>C</div>
-                <div id="four" className="btn p-3 " onClick={() => clickHandler("4")}>4</div>
-                <div id="five" className="btn p-3 " onClick={() => clickHandler("5")}>5</div>
-                <div id="six" className="btn p-3 " onClick={() => clickHandler("6")}>6</div>
-                <div id="add" className="btn p-3 " onClick={() => clickHandler("+")}>+</div>
-                <div id="multiply" className="btn p-3 " onClick={() => clickHandler("*")}>x</div>
-                <div id="one" className="btn p-3 " onClick={() => clickHandler("1")}>1</div>
-                <div id="two" className="btn p-3 " onClick={() => clickHandler("2")}>2</div>
-                <div id="three" className="btn p-3 " onClick={() => clickHandler("3")}>3</div>
-                <div id="zero" className="btn p-3 " onClick={() => clickHandler("0")}>0</div>
-                <div id="subtract" className="btn p-3 " onClick={() => clickHandler("-")}>-</div>
-                <div id="divide" className="btn p-3 " onClick={() => clickHandler("/")}>/</div>
-                <div id="decimal" className="btn p-3 " onClick={() => clickHandler(".")}>.</div>
-                <div id="equals" className="btn p-3 " onClick={() => equalSign()}>=</div>
+                <div id="seven" className="buttonPad btn p-3" onClick={() => clickHandler("7")}>7</div>
+                <div id="eight" className="buttonPad btn p-3 " onClick={() => clickHandler("8")}>8</div>
+                <div id="nine" className="buttonPad btn p-3 " onClick={() => clickHandler("9")}>9</div>
+                <div id="clear" className="buttonPad btn p-3 " onClick={() => clear()}>C</div>
+                <div id="four" className="buttonPad btn p-3 " onClick={() => clickHandler("4")}>4</div>
+                <div id="five" className="buttonPad btn p-3 " onClick={() => clickHandler("5")}>5</div>
+                <div id="six" className="buttonPad btn p-3 " onClick={() => clickHandler("6")}>6</div>
+                <div id="add" className="buttonPad btn p-3 " onClick={() => clickHandler("+")}>+</div>
+                <div id="multiply" className="buttonPad btn p-3 " onClick={() => clickHandler("*")}>x</div>
+                <div id="one" className="buttonPad btn p-3 " onClick={() => clickHandler("1")}>1</div>
+                <div id="two" className="buttonPad btn p-3 " onClick={() => clickHandler("2")}>2</div>
+                <div id="three" className="buttonPad btn p-3 " onClick={() => clickHandler("3")}>3</div>
+                <div id="zero" className="buttonPad btn p-3 " onClick={() => clickHandler("0")}>0</div>
+                <div id="subtract" className="buttonPad btn p-3 " onClick={() => clickHandler("-")}>-</div>
+                <div id="divide" className="buttonPad btn p-3 " onClick={() => clickHandler("/")}>/</div>
+                <div id="decimal" className="buttonPad btn p-3 " onClick={() => clickHandler(".")}>.</div>
+                <div id="equals" className="buttonPad btn p-3 " onClick={() => equalSign()}>=</div>
             </div>
         </div>
     );
